@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    a1, a2 = tuple_a[:2]
-    b1, b2 = tuple_b[:2]
+    tuple_a = list(tuple_a)
+    tuple_b = list(tuple_b)
+    tuple_a.append(0)
+    tuple_a.append(0)
+    tuple_b.append(0)
+    tuple_b.append(0)
 
-    result = (a1 + b1, a2 + b2)
+    result = tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1]
 
     return result
