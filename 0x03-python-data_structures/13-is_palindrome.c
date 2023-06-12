@@ -1,39 +1,30 @@
 #include "lists.h"
-#include <stddef.h>
 
 /**
- * is_palindrome - checking if it is palindrome
- * @head: head of the linked lists
+ * reverse_listint - reverses linked list
+ * @head: head of node
  *
- * Return: always 1 on sucess
+ * Return: first node of the reversed linked list
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *slow = *head, *fast = *head, *prev = NULL, *temp;
+	listint_t *current_node;
+	listint_t *previous_node;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*head == NULL)
+	{
 		return (1);
+	}
+	previous_node = (*head)->next;
+	(*head)->next = NULL;
 
-	while (fast != NULL && fast->next != NULL)
+	while (previous_node != NULL)
 	{
-		fast = fast->next->next;
-		temp = slow;
-		slow = slow->next;
-		temp->next = prev;
-		prev = temp;
+		current_node = previous_node->next;
+		previous_node->next = *head;
+
+		*head = previous_node;
+		previous_node = current_node;
 	}
-	if (fast != NULL)
-	{
-		slow = slow->next;
-	}
-	while (slow != NULL)
-	{
-		if (prev->n != slow->n)
-		{
-			return (0);
-		}
-		prev = prev->next;
-		slow = slow->next;
-	}
-	return (1);
+	return (0);
 }
