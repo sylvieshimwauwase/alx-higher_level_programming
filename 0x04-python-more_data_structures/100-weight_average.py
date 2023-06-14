@@ -8,9 +8,3 @@ def weight_average(my_list=[]):
         tot_score += score * weight
         tot_weight += weight
         return (tot_score / tot_weight)
-
-
-my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
-# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
-result = weight_average(my_list)
-print("Average: {:0.2f}".format(result))
