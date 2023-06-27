@@ -32,16 +32,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """
-        Setter property for setting size of square
-
-        Args:
-            value (int): size of square
-
-        Raises:
-            TypeError: if size is an integer
-            ValueError: if size is less than 0
-        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
