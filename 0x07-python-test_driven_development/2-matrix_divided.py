@@ -18,8 +18,10 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is equal to zero
     """
 
-    if not isinstance(matrix, list) or \
-            not all(isinstance(row, list) for row in matrix):
+    if (not isinstance(matrix, list) or matrix == [] or
+            not all(isinstance(row, list) for row in matrix) or
+            not all((isinstance(elem, int) or isinstance(elem, float))
+                    for elem in [num for row in matrix for num in row])):
         raise TypeError("matrix must be a matrix (list of lists) of "
                         "integers/floats")
 
