@@ -1,10 +1,10 @@
 Test cases for 0-add_integer module
-
+===================================
 
 the 0-add_integer module has two integers or floats and return their sum
 
 Usage
-
+=====
 
 Importing from module:
     >>> add_integer = __import__('0-add_integer').add_integer
@@ -27,7 +27,7 @@ Adding two integers with the second being the same as the default value of b (a 
 
 Adding a positive float and a positive integer (a = 3.5 and b = 5)
     >>> add_integer(3.5, 5)
-    8.5
+    8
 
 Adding a float and an integer where the integer is equal to the default value of b (a = 2.5 and b = 98)
     >>> add_integer(2.5)
