@@ -3,6 +3,8 @@
 
 
 class Rectangle:
+    """Representation of Rectangle"""
+
     def __init__(self, width=0, height=0):
         """Initializing this rectangle class
         Args:
