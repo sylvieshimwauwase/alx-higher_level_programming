@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this module is of adding 2 integrs"""
+"""this module is of adding 2 integers"""
 
 
 def add_integer(a, b=98):
