@@ -22,17 +22,16 @@ def text_indentation(text):
     if text.strip() == "":
         return
 
-    count = 0
-    while count < len(text) and text[count] == " ":
-        count = count + 1
+    res = []
+    curr_line = ""
+    for char in text:
+        curr_line += char
+        if char in (".", "?", ":"):
+            res.append(curr_line.strip())
+            res.append("")
+            curr_line = ""
 
-    while count < len(text):
-        print(text[count], end="")
-        if text[count] == "\n" or text[count] in ".?:":
-            if text[count] in ".?:":
-                print("\n")
-            count = count + 1
-            while count < len(text) and text[count] == " ":
-                count = count + 1
-            continue
-        count = count + 1
+    if curr_line:
+            res.append(curr_line.strip())
+
+    print("\n".join(res))
