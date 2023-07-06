@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from typing import Any
+"""Define a locked class"""
 
 
 class LockedClass:
