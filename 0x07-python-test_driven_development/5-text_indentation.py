@@ -32,6 +32,6 @@ def text_indentation(text):
             curr_line = ""
 
     if curr_line:
-            res.append(curr_line.strip())
+        res.append(curr_line.strip())
 
     print("\n".join(res))
