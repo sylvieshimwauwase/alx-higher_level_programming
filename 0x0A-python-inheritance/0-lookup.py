@@ -4,3 +4,7 @@ def lookup(obj):
 
     attr = dir(obj)
     return attr
+
+my_list = [1, 2, 3]
+result = lookup(my_list)
+print(result)
