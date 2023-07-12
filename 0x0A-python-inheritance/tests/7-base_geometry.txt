@@ -1,0 +1,17 @@
+Test cases for 7-base_geometry.py
+-------------------------------------------
+
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Example:
+        >>> geometry = BaseGeometry()
+        >>> geometry.integer_validator("width", 10)
+        >>> geometry.integer_validator("height", -5)
+        Traceback (most recent call last):
+        ...
+        ValueError: height must be greater than 0
+        >>> geometry.integer_validator("length", "abc")
+        Traceback (most recent call last):
+        ...
+        TypeError: length must be an integer
+        
