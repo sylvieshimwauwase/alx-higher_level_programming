@@ -24,11 +24,4 @@ class Student:
         Retrieving dictionary representation
         """
 
-        attrib = self.__dict__
-        json_dict = {}
-
-    for key, value in attrib.items():
-        if isinstance(value, (list, dict, str, int, bool)):
-            json_dict[key] = value
-
-    return json_dict
+        return self.__dict__
