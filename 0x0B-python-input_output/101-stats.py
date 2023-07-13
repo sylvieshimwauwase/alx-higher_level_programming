@@ -5,7 +5,7 @@
 import sys
 
 
-def compute_metrics():
+def compute():
     """
     Read stdin line by line and compute metrics based input format.
 
@@ -15,7 +15,7 @@ def compute_metrics():
 
     Prints the computed statistics upon keyboard interruption.
     """
-    # Initialize variables
+
     total_size = 0
     status_counts = {}
 
