@@ -7,4 +7,4 @@ def load_from_json_file(filename):
     """function that creates an object from json file"""
 
     with open(filename) as file:
-        json.loads(file)
+        return json.load(file)
