@@ -5,6 +5,5 @@
 def write_file(filename="", text=""):
     """writes utf-8 file and returns number of characters written"""
 
-    with open(filename, encoding="utf-8") as file:
-        for char in file:
-            print(file.write(char), end="")
+    with open(filename, "w", encoding="utf-8") as file:
+        return (file.write(char), end="")
