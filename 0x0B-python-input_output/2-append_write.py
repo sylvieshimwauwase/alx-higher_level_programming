@@ -6,4 +6,4 @@ def append_write(filename="", text=""):
     """appends a utf-8 string to a text file"""
 
     with open(filename, "a", encoding="utf-8") as file:
-        return file.append(text)
+        return file.write(text)
