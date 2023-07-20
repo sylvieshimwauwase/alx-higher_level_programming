@@ -115,10 +115,14 @@ class Rectangle(Base):
 
     def display(self):
         """displaying rectangle elements"""
-        for a in range(self.y):
+        for a in range(self.__y):
             print()
-        for i in range(self.height):
-            print(" " * self.x + self.width * '#')
+        for i in range(self.__height):
+            print(" " * self.__x, end="")
+
+            for j in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """returning string of the rectangle"""
