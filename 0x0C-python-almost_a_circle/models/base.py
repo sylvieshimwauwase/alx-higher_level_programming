@@ -40,7 +40,9 @@ class Base:
             if list_objs == [] or None:
                 json.dump(list_objs, filename)
             else:
-                j_str = cls.to_json_string([object.to_dictionary() for object in list_objs])
+                j_str = cls.to_json_string(
+                    [obj.to_dictionary() for obj in list_objs]
+                    )
                 f.write(j_str)
 
     def from_json_string(json_string):
@@ -55,7 +57,7 @@ class Base:
     def create(cls, **dictionary):
         """Class method that returns an instance with attributes already set
         Args:
-            **dictionary: Double pointer to a dictionary representing the attributes
+            **dictionary: representing the attributes
         Return:
             Instance with attributes already set
         """
@@ -68,7 +70,7 @@ class Base:
 
         dummy_instance.update(**dictionary)
         return dummy_instance
-    
+
     def load_from_file(cls):
         """Class method that returns a list of instances from a JSON file
         Return:
@@ -79,7 +81,7 @@ class Base:
 
         if os.path.exists(filename):
             with open(filename, "r") as file:
-                json_string = file.read() 
+                json_string = file.read()
                 dict_list = json.loads(json_string)
 
             for dictionary in dict_list:
