@@ -3,10 +3,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
-from models.square import Square
 import os
-
-
 
 
 class Test_Base(unittest.TestCase):
@@ -24,11 +21,11 @@ class Test_Base(unittest.TestCase):
 
     def test_with_none_id(self):
         """checking when id is none"""
-        b1 = Base(id = 1)
+        b1 = Base(id=1)
         self.assertEqual(b1.id, 1)
-        b1 = Base(id = 3)
+        b1 = Base(id=3)
         self.assertEqual(b1.id, 3)
-    
+
     def test_with_none_id_increment(self):
         """checking if id increment correctly"""
         b1 = Base()
@@ -51,10 +48,10 @@ class Test_Base(unittest.TestCase):
     def test_obj_attributes(self):
         """testing objects attributes"""
         b1 = Base()
-        self.assertEqual(b1.__dict__,{'id': 1})
+        self.assertEqual(b1.__dict__, {'id': 1})
         b2 = Base(90)
         self.assertEqual(b2.__dict__, {'id': 90})
-    
+
     def test_errors_raises(self):
         """testing on errors raises"""
         self.assertRaises(TypeError)
@@ -73,7 +70,7 @@ class Test_Base(unittest.TestCase):
                          ' ["width", 10], ["x", 2], ["y", 8]]')
         self.assertTrue(type(dict) != type(json_dict))
 
-        r1 = Rectangle(50,40)
+        r1 = Rectangle(50, 40)
         dict = r1.to_dictionary()
         json_dict = Base.to_json_string(sorted(dict.items()))
         self.assertEqual(json_dict, '[["height",40], ["id", 2], '
@@ -105,6 +102,7 @@ class Test_Base(unittest.TestCase):
             os.remove("Square.csv")
         except Exception:
             pass
+
 
 if __name__ == '__main__':
     unittest.main()
