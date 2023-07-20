@@ -2,6 +2,7 @@
 """creating Base class"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -45,6 +46,7 @@ class Base:
                     )
                 f.write(j_str)
 
+    @staticmethod
     def from_json_string(json_string):
         """method that returns list of dictionaries
         Args:
@@ -54,6 +56,7 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
     def create(cls, **dictionary):
         """Class method that returns an instance with attributes already set
         Args:
@@ -65,12 +68,10 @@ class Base:
             dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy_instance = cls(1)
-        else:
-            dummy_instance = cls()
-
         dummy_instance.update(**dictionary)
         return dummy_instance
 
+    @classmethod
     def load_from_file(cls):
         """Class method that returns a list of instances from a JSON file
         Return:
