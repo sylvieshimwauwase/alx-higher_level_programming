@@ -12,7 +12,7 @@ class Rectangle(Base):
             width: width of the rectangle
             height: height of the rectangle
             x: size of the rectangle
-            y: y size of teh rectangle
+            y: y size of the rectangle
         """
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -115,14 +115,10 @@ class Rectangle(Base):
 
     def display(self):
         """displaying rectangle elements"""
-        for a in range(self.__y):
+        for a in range(self.y):
             print()
-        for i in range(self.__height):
-            print("" * self.__x, end="")
-
-            for j in range(self.__width):
-                print("#", end="")
-            print()
+        for i in range(self.height):
+            print("" * self.x + self.width * '#')
 
     def __str__(self):
         """returning string of the rectangle"""
