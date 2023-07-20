@@ -2,6 +2,7 @@
 """Unittest for rectangle.py file
 """
 import unittest
+import os
 from models.base import Base
 from models.rectangle import Rectangle
 from unittest.mock import patch
@@ -280,6 +281,7 @@ class Test_rectangle(unittest.TestCase):
             os.remove("Square.csv")
         except Exception:
             pass
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -2,6 +2,7 @@
 """Unittest for square.py file
 """
 import unittest
+import os
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
@@ -269,6 +270,7 @@ class Test_square(unittest.TestCase):
             os.remove("Square.csv")
         except Exception:
             pass
+
 
 if __name__ == '__main__':
     unittest.main()
