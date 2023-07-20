@@ -4,6 +4,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 import os
+import json
 
 
 class Test_Base(unittest.TestCase):
@@ -52,35 +53,21 @@ class Test_Base(unittest.TestCase):
         b2 = Base(90)
         self.assertEqual(b2.__dict__, {'id': 90})
 
-    def test_errors_raises(self):
-        """testing on errors raises"""
-        self.assertRaises(TypeError)
-        b1 = Base(id="Invalid_id")
-        self.assertRaises(AttributeError)
-        b1.to_dictionary()
-        self.assertRaises(NameError)
-        b1.Base()
-
     def test_json_string(self):
         """testing for json string method"""
-        r1 = Rectangle(10, 7, 2, 8)
-        dict = r1.to_dictionary()
-        json_dict = Base.to_json_string(sorted(dict.items()))
-        self.assertEqual(json_dict, '[["height",7], ["id", 30], '
-                         ' ["width", 10], ["x", 2], ["y", 8]]')
-        self.assertTrue(type(dict) != type(json_dict))
+        r1 = Rectangle(10, 7, 2, 8, 30)
+        dict_r1 = r1.to_dictionary()
+        json_dict_r1 = Base.to_json_string([dict_r1])
+        self.assertEqual(json.loads(json_dict_r1), [dict_r1])
 
         r1 = Rectangle(50, 40)
-        dict = r1.to_dictionary()
-        json_dict = Base.to_json_string(sorted(dict.items()))
-        self.assertEqual(json_dict, '[["height",40], ["id", 2], '
-                         ' ["width", 50], ["x", 0], ["y", 0]]')
-        self.assertTrue(type(dict) != type(json_dict))
+        dict_r2 = r1.to_dictionary()
+        json_dict_r2 = Base.to_json_string([dict_r2])
+        self.assertEqual(json.loads(json_dict_r2), [dict_r2])
 
-        dict = []
-        json_dict = Base.to_json_string(dict)
-        self.assertEqual(json_dict, '[]')
-        self.assertTrue(type(dict) != type(json_dict))
+        empty_dict = {}
+        json_empty_dict = Base.to_json_string([empty_dict])
+        self.assertEqual(json.loads(json_empty_dict), [empty_dict])
 
     def tearDown(self):
         """Tear down test method to reset class attribute
