@@ -1,5 +1,5 @@
 -- script that displays max temperature
 SELECT `state`, MAX(`temperature`) AS max_temperature
-FROM `temperature`
+FROM `temperatures`
 GROUP BY `state`
 ORDER BY `state`;`
