@@ -1,5 +1,8 @@
--- script that creates database and table
+-- script that creates database
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+-- use database
+USE hbtn_0d_usa;
+-- script to create table
 CREATE TABLE IF NOT EXISTS cities (
 	id INT PRIMART KEY UNIQUE NOT NULL,
 	state_id INT,
