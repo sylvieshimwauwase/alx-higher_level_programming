@@ -7,8 +7,8 @@ class Square extends BaseSquare {
       c = 'X';
     }
 
-    for (let i = 0; i < this.size; i++) {
-      console.log(c.repeat(this.size));
+    for (let i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.width));
     }
   }
 }
