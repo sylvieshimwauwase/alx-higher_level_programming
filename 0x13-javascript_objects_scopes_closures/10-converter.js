@@ -1,10 +1,8 @@
 #!/usr/bin/node
 exports.converter = function (base) {
-  if (this === 0) {
-    return '';
-  } else {
-    const quotient = Math.floor(this / base);
-    const remainder = this % base;
-    return converter.call(quotient, base) + remainder;
-  }
+  if (this === 0) return '';
+
+  return this >= base
+  ? converter.call(Math.floor(this / base), base) + (this % base)
+  : String(this);
 };
