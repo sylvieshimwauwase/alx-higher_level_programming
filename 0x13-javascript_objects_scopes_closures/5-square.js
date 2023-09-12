@@ -1,10 +1,7 @@
 #!/usr/bin/node
-class Rectangle {
-  constructor (w, h) {
-    this.width = w;
-    this.height = h;
-  }
-}
+
+const Rectangle = require('./4-rectangle');
+
 class Square extends Rectangle {
   constructor (size) {
     super(size, size);
