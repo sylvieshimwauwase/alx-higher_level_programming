@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 script to list all states from database
+and names in upper like N
 """
 
 import MySQLdb

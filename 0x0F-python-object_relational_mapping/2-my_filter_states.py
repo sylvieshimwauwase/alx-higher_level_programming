@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 script to list all states from database
+where name matches the argument
+from the database 'hbtn_0e_0_usa'
 """
 
 import MySQLdb
@@ -13,14 +15,14 @@ if __name__ == '__main__':
 
     db = MySQLdb.connect(
             host="localhost", user=argv[1], port=3306,
-            passwd=argv[2], db=argv[3], state_name=argv[4]
+            passwd=argv[2], db=argv[3]
             )
 
     cursor = db.cursor()
 
     cursor.execute(
-            "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
-            .format(state_name)
+            "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+            .format(argv[4])
             )
 
     states = cursor.fetchall()
