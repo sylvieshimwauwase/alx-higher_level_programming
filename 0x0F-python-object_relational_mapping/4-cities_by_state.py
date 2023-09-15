@@ -26,5 +26,6 @@ if __name__ == '__main__':
 
     cities = cursor.fetchall()
 
-    for city in cities:
-        print(city)
+    if cities is not None:
+        for city in cities:
+            print(city)
