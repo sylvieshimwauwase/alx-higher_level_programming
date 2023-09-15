@@ -28,5 +28,3 @@ if __name__ == '__main__':
 
     for city in cities:
         print(city)
-
-    sys.exit(0)
