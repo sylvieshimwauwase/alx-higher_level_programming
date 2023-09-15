@@ -31,5 +31,4 @@ if __name__ == '__main__':
     cities = cursor.fetchall()
 
     if cities is not None:
-        for city in cities:
-            print(city)
+        print(", ".join([city[1] for city in cities]))
