@@ -22,10 +22,11 @@ if __name__ == '__main__':
     engine = create_engine(db_engine)
     session = sessionmaker(bind=engine)()
 
-    state = State(name="Syl")
+    state = State(name="Louisiana")
 
     session.add(state)
 
     session.commit()
 
     print(state.id)
+    session.close()
