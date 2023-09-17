@@ -22,7 +22,7 @@ if __name__ == '__main__':
     engine = create_engine(db_engine)
     session = sessionmaker(bind=engine)()
 
-    states = session.query(State).filter(State.name.contains('a')
+    states = session.query(State).filter(State.name.contains('a'))
 
     for state in states:
         print('{0}: {1}'.format(state.id, state.name))
