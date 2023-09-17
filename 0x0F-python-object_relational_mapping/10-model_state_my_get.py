@@ -22,9 +22,9 @@ if __name__ == '__main__':
     engine = create_engine(db_engine)
     session = sessionmaker(bind=engine)()
 
-    state = session.query(State).filter_by(name=state_name).first()
+    state = session.query(State).filter(State.name == argv[4]).first()
 
-    if state:
+    if state is not None:
         print("{}".format(state.id))
     else:
         print("Not found")

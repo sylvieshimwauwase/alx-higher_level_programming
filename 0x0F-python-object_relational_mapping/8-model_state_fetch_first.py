@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     state = session.query(State).order_by(State.id).all()
 
-    if state:
-        print("{}: {}".format(state.id, state.name))
+    if state is not None:
+        print('{0}: {1}'.format(state.id, state.name))
     else:
         print("Nothing")
