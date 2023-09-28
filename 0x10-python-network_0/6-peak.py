@@ -10,17 +10,22 @@ def find_peak(list_of_integers):
     if not list_of_int:
         return None
 
-    l, r = 0, len(list_of_int) - 1
+    size = len(list_of_int)
 
-    while l < r:
-        mid = (l + r) // 2
+    if size == 1:
+        return list_of_int[0]
+    elif size == 2:
+        return max(list_of_int)
 
-        if list_of_int[mid] >= list_of_int[mid + 1] and list_of_int[mid] >= list_of_int[mid - 1]:
-            return list_of_int[mid]
+    mid = int(size / 2)
 
-        if list_of_int[mid] < list_of_int[mid + 1]:
-            l = mid + 1
-        else:
-            r = mid -1
+    maxp = list_of_int[mid]
 
-    return max(list_of_int[l], list_of_int[r])
+    if maxp >= list_of_int[mid - 1] and maxp >= list_of_int[mid + 1]:
+        return maxp
+
+    elif maxp < list_of_int[mid - 1]:
+        return find_maxp(list_of_int[:mid])
+    else:
+        return find_maxp(list_of_int[mid + 1:])
+
