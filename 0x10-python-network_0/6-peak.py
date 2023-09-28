@@ -28,4 +28,3 @@ def find_peak(list_of_integers):
         return find_maxp(list_of_int[:mid])
     else:
         return find_maxp(list_of_int[mid + 1:])
-
